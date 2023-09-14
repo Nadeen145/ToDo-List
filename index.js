@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
-const uri = "mongodb+srv://Nadeen:Nadeen@cluster0.r9bdgax.mongodb.net/todoListDB";
+const uri = "your uri from mongoDB Atlas";
 async function connect() {
   try {
     await mongoose.connect(uri);
