@@ -1,0 +1,62 @@
+<%- include("partials/header.ejs") %>
+    
+    <h1 class="title">Welcome to the ToDo List 🤟</h1>
+
+    <% if(locals.pageName) { %>
+        <div class="box" id="heading">
+            <h1 class="heading-text">
+                <%= pageName %>
+            </h1>
+        </div>
+    <% } else { %>
+        <div class="box" id="heading">
+            <h1 class="heading-text">
+                Work List
+            </h1>
+        </div>
+    <% } %>
+
+    <div class="box">     
+        <form class="list" action="/task" method="post">
+            <% if(locals.todoList) { %>
+                
+                <% todoList.forEach((task) => { %>
+                    <div class="item">
+
+                    <% if(task.checked) { %> 
+                        <button class="button-checkbox button-bg" 
+                        name="checkName" value="<%= task.name %>" 
+                        type="check"></button>
+
+                        <p class="checked">
+                            <%= task.name %>
+                        </p>
+                    <% } else { %>
+                        <button class="button-checkbox" 
+                        name="checkName" value="<%= task.name %>" 
+                        type="check"></button>
+
+                        <p>
+                            <%= task.name %>
+                        </p>
+                    <% } %>
+                        <div class="right">
+                            <button class="button-remove" 
+                            name="removeName" value="<%= task.name %>" 
+                            type="remove">remove</button>
+                        </div>
+
+                    </div>
+                <% }) %>
+
+            <% } %> 
+        </form>
+
+        <form class="item" action="/add" method="post">
+            <input type="text" name="newTask" placeholder="New Task" autocomplete="off">
+            <button class="button-submit" type="submit">+</button>
+        </form>
+        
+    </div>
+
+<%- include("partials/footer.ejs") %>
