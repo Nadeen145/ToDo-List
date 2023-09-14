@@ -1,11 +1,16 @@
 {
   "name": "todo-list",
   "version": "1.0.0",
+  "homepage": "https://Nadeen145.github.io/ToDo-List/",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "node index.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +24,8 @@
     "mongoose": "^7.5.1",
     "moongose": "^1.0.0",
     "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
