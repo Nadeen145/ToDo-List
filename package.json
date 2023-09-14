@@ -1,7 +1,6 @@
 {
   "name": "todo-list",
   "version": "1.0.0",
-  "homepage": "https://Nadeen145.github.io/ToDo-List/",
   "description": "",
   "main": "index.js",
   "type": "module",
